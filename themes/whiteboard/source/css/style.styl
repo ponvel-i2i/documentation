@@ -50,8 +50,7 @@ html, body
   background-color: #2484FF
   border-radius: 40px
   width: 20px
-embossed-bg()
-  background: linear-gradient(to bottom, rgba(black, 0.2), rgba(black, 0) 8px), linear-gradient(to top, rgba(black, 0.2), rgba(black, 0) 8px), linear-gradient(to bottom, rgba($nav-embossed-border-top, 1), rgba($nav-embossed-border-top, 0) 1.5px), linear-gradient(to top, rgba($nav-embossed-border-bottom, 1), rgba($nav-embossed-border-bottom, 0) 1.5px), $nav-subitem-bg
+
 .tocify-wrapper
   transition: left 0.3s ease-in-out
   overflow-y: auto
@@ -411,7 +410,7 @@ embossed-bg()
   pre, blockquote
     background-color: $code-bg
     color: #fff
-    padding: 2em $main-padding
+    padding: 1em $main-padding
     margin: 0
     width: $examples-width
     float: right
@@ -429,11 +428,9 @@ embossed-bg()
   blockquote
     & > p
       background-color: $code-annotation-bg
-      border-radius: 5px
+      border-radius: 3px
       padding: $code-annotation-padding
-      color: #ccc
-      border-top: 1px solid #000
-      border-bottom: 1px solid #404040
+      color: #ccc 
 ////////////////////////////////////////////////////////////////////////////////
 // RESPONSIVE DESIGN
 ////////////////////////////////////////////////////////////////////////////////
