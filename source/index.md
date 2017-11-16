@@ -23,9 +23,9 @@ search: true
 https://tapgenes.com
 ```
 
-Welcome to the Tapgenes API! You can use our API to access individuals and their families health and wealth endpoints, which can get person's personal information, relationship details and health details in our database.
+Welcome to the Tapgenes API! You can use our API to access individual and familial profile information that pertains to their health and wealth. Our API can be used in a variety of ways to transform individual data points into a cohesive story about an individual’s health and wealth.
 
-TapGenes is designed to complement, not replace, the relationship between you and your financial advisor or physician. Our aim is to promote individual responsibility for health and wealth and not to offer financial or medical advice. The website is intended for a general audience.
+Tapgenes is designed to complement, not replace, the relationship between individuals and their financial advisor or physician. Our aim is to promote individual responsibility for health and wealth, not to offer financial or medical advice.
 
 # Authentication
 
@@ -258,7 +258,7 @@ CONFIRM_PASSWORD - confirm password
 }
 ```
 
-This endpoint used to update your password.
+This endpoint is used to update a user’s password. 
 
 Parameter    | Description
 ------------ | -----------
@@ -326,6 +326,15 @@ This endpoint used to get the person.
 Parameter    | Description
 ------------ | -----------
 personId     | person Id
+
+The result JSON will contain the person details like:
+* id - The person id
+* email - The person's registered email id
+* isActive - the active status of the person
+* isAdmin - If the person is Admin
+* isPremiumUser - If the person is a paid/premium user
+* isGenivityAdvisor - If the person is an adviser
+* personDetailsEntity - Personal details of the user like first name, last name, full name, date of birth, is alive, profile picture URL, address details, sex, relationship status, etc.
 
 <aside class="notice">
 You must replace `ACCESS_TOKEN` with your API request.
@@ -1461,6 +1470,12 @@ curl -X GET --header 'Accept: application/json' --header 'Authorization: OAuth2 
 
 This endpoint is used to get all the assessments. The assessment id is used to get the individual assessment.
 
+The list of Risk Assessments available are:
+* Breast Cancer
+* Lung Cancer
+* Heart Disease
+* Colon Cancer
+
 <aside class="notice">
 You must replace `ACCESS_TOKEN` with your API request.
 </aside>
@@ -2198,8 +2213,6 @@ You must replace `ACCESS_TOKEN` with your API request.
 
 ## Get Privacy Types
 
-The privacy is a term is used to set the access control for the data.
-
 > API Endpoint
 
 ```
@@ -2238,8 +2251,15 @@ curl -X GET --header 'Accept: application/json' --header 'Authorization: OAuth2 
   }
 ]
 ```
+The privacy is a term is used to set the access control for the data.
 
 This endpoint is used to get the predefined privacy and weight.
+
+The list of Privacy levels available are:
+* None
+* View
+* Edit
+* Admin
 
 <aside class="notice">
 You must replace `ACCESS_TOKEN` with your API request.
@@ -2805,7 +2825,7 @@ POST https://tapgenes.com/ehr/v1/logout
 https://tapgenes.com/ehr/v1/logout
 ```
 
-This endpoint is used to logged out person session.
+This endpoint is used to log out the currently logged in user.
 
 <aside class="notice">
 You must replace `ACCESS_TOKEN` with your API request.
