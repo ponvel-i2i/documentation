@@ -1727,7 +1727,7 @@ telephone | The telephone of the new person
 email | The email of the new person
 ancestry | The ancestry of the new person
 religion | The religion of the new person
-langulage | The language of the new person
+language | The language of the new person
 
 <aside class="notice">
 You must replace `ACCESS_TOKEN` with your API request.
